@@ -7,13 +7,15 @@
     <form role="form">
       <div class="form-group">
         <label for="smallblind">Small Blind</label>
-        <input ng-model="pokerStructure.bigBlind" type="number" class="form-control" id="smallblind" placeholder="Enter Small Blind">
+        <input ng-model="pokerStructure.bigBlind"
+               ng-model-options="{ getterSetter: true }"
+               type="number" class="form-control" id="smallblind" placeholder="Enter Small Blind">
       </div>
       <div class="form-group">
         <label for="bigblind">Big Blind</label>
         <input ng-model="pokerStructure.bigBlind" type="number" class="form-control" id="bigblind" placeholder="Enter Big Blind">
       </div>
-      <b>{{pokerStructure.bigBlind}}</b>
+      <b ng-bind="pokerStructure.bigBlind">heh</b>
       <button type="submit" class="btn btn-default">Submit</button>
     </form>
 </div>
