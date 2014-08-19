@@ -9,9 +9,17 @@
  */
 angular.module('pokerappApp')
   .controller('MainCtrl', function ($scope) {
-    $scope.awesomeThings = [
-      'HTML5 Boilerplate',
-      'AngularJS',
-      'Karma'
-    ];
+      /**
+       * Structure of the poker stuff
+       */
+    $scope.pokerStructure = {
+        "smallBlind": 25,
+        "largeBlind": 50,
+        /* in seconds, default ten minutes */
+        "roundInterval": 600
+    };
+    
+    $scope.updateSmallBlind = function () {};
+    $scope.updateBigBlind = function () {};
+    
   });
