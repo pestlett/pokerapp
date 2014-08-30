@@ -1,21 +1,28 @@
 
 <div class="row marketing">
   <h4>HTML5 Boilerplate dave</h4>
-  <p ng-click="">
+  <p>Test
     HTML5 Boilerplate is a professional front-end template for building fast, robust, and adaptable web apps or sites.
   </p>
     <form role="form">
       <div class="form-group">
         <label for="smallblind">Small Blind</label>
-        <input ng-model="pokerStructure.bigBlind"
+        <input ng-model="pokerStructure.smallBlind"
                ng-model-options="{ getterSetter: true }"
                type="number" class="form-control" id="smallblind" placeholder="Enter Small Blind">
       </div>
       <div class="form-group">
         <label for="bigblind">Big Blind</label>
-        <input ng-model="pokerStructure.bigBlind" type="number" class="form-control" id="bigblind" placeholder="Enter Big Blind">
+        <input ng-model="pokerStructure.bigBlind"
+               ng-model-options="{ getterSetter: true }"
+               type="number" class="form-control" id="bigblind" placeholder="Enter Big Blind">
       </div>
-      <b ng-bind="pokerStructure.bigBlind">heh</b>
+      <p>
+          <b>Small Blind: </b><span ng-bind="pokerStructure.smallBlind"></span>
+      </p>
+      <p>
+          <b>Big Blind: </b><span ng-bind="pokerStructure.bigBlind"></span>
+      </p>
       <button type="submit" class="btn btn-default">Submit</button>
     </form>
 </div>

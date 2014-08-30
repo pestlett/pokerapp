@@ -13,13 +13,20 @@ angular.module('pokerappApp')
        * Structure of the poker stuff
        */
     $scope.pokerStructure = {
-        "smallBlind": 25,
-        "largeBlind": 50,
+        smallBlind: 25,
+        bigBlind: 50,
         /* in seconds, default ten minutes */
-        "roundInterval": 600
+        roundInterval: 600
     };
     
-    $scope.updateSmallBlind = function () {};
-    $scope.updateBigBlind = function () {};
+    /**
+     * When the small or large blinds change then watch...
+     */
+    $scope.$watch('pokerStructure', function (newValue, oldValue) {
+        if ($scope.bigBlind <= $scope.smallBlind) {
+            alert('Waaaaaaaaaaaaaaaaaaaa');
+            return false;
+        }
+    }, true);
     
   });
