@@ -5,24 +5,35 @@
     HTML5 Boilerplate is a professional front-end template for building fast, robust, and adaptable web apps or sites.
   </p>
     <form role="form">
-      <div class="form-group">
+      <div class="control-group">
         <label for="smallblind">Small Blind</label>
         <input ng-model="pokerStructure.smallBlind"
                ng-model-options="{ getterSetter: true }"
                type="number" class="form-control" id="smallblind" placeholder="Enter Small Blind">
       </div>
+      <div class="control-group">
+        <label class="control-label" for="bigblind">Big Blind</label>
+        <div class="controls">
+            <input ng-model="pokerStructure.bigBlind"
+                   ng-model-options="{ getterSetter: true }"
+                   type="number" class="form-control" id="bigblind" placeholder="Enter Big Blind">
+          <span class="help-inline"></span>
+        </div>
+    </div>
       <div class="form-group">
-        <label for="bigblind">Big Blind</label>
-        <input ng-model="pokerStructure.bigBlind"
+        <label for="blindleveltimeout">Blind Level Timeout</label>
+        <input ng-model="pokerStructure.blindLevelTimeout"
                ng-model-options="{ getterSetter: true }"
-               type="number" class="form-control" id="bigblind" placeholder="Enter Big Blind">
+               type="number" class="form-control" id="blindleveltimeout" placeholder="Enter Blind Level Timeout">
       </div>
-      <p>
-          <b>Small Blind: </b><span ng-bind="pokerStructure.smallBlind"></span>
-      </p>
-      <p>
-          <b>Big Blind: </b><span ng-bind="pokerStructure.bigBlind"></span>
-      </p>
-      <button type="submit" class="btn btn-default">Submit</button>
+      <div class="row">
+          <div class="col-sm-6">
+            <label for="stopclock">Stop the clock between rounds:</label>
+            <input ng-model="pokerStructure.stopClockBetweenLevels"
+                       ng-model-options="{ getterSetter: true }"
+                       type="checkbox" id="stopclock">
+          </div>
+      </div>
+      <button ng-click="pokerStructure.save()" type="submit" class="btn btn-default">Submit</button>
     </form>
 </div>
